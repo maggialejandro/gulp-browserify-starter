@@ -1,0 +1,7 @@
+{
+  "name": "gulp-browserify-starter",
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  },
+  "devDependencies": {}
+}
