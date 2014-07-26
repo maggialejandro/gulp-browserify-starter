@@ -1,3 +1,5 @@
+'use strict';
+
 var path = require('path');
 var production = (process.env.NODE_ENV === 'production');
 
@@ -13,9 +15,9 @@ var config = {
 
 config.scripts = {
     src: [
-        "./" + config.app + "/scripts/main.js"
+        './' + config.app + '/scripts/main.js'
     ],
-    dest: 'js',
+    dest: 'scripts/',
     filename: 'main.js'
 }
 
