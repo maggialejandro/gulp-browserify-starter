@@ -3,6 +3,10 @@
   "description": "Project template that uses Gulp with Browserify",
   "version": "0.0.0",
   "author": "maggialejandro",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/maggialejandro/gulp-browserify-starter.git"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
@@ -10,31 +14,33 @@
     "dist": "NODE_ENV=production gulp dist"
   },
   "dependencies": {
-    "main-bower-files": "^1.0.2"
   },
   "devDependencies": {
-    "gulp": "3.8.5",
-    "gulp-clean": "^0.2.4",
-    "gulp-filter": "^0.4.1",
-    "gulp-flatten": "^0.0.2",
-    "gulp-csso": "^0.2.6",
-    "gulp-autoprefixer": "^0.0.7",
-    "gulp-uglify": "^0.2.1",
-    "gulp-imagemin": "^0.6.1",
-    "gulp-cache": "^0.2.0",
-    "gulp-useref": "^0.4.2",
-    "gulp-size": "^0.3.0",
-    "gulp-jshint": "^1.5.3",
-    "gulp-livereload": "^1.5.0",
-    "opn": "^0.1.1",
-    "browserify": "^4.2.0",
-    "deamdify": "^0.1.1",
-    "debowerify": "^0.7.1",
-    "uglifyify": "^2.4.0",
-    "jshint-stylish": "^0.2.0",
-    "streamqueue": "^0.0.6",
-    "wiredep": "^1.4.3",
-    "connect": "^2.14.4",
-    "connect-livereload": "^0.4.0"
+    "gulp": "~3.8.5",
+    "gulp-clean": "~0.3.1",
+    "gulp-filter": "~0.5.0",
+    "gulp-flatten": "~0.0.2",
+    "gulp-csso": "~0.2.9",
+    "gulp-autoprefixer": "~0.0.8",
+    "gulp-uglify": "~0.3.1",
+    "gulp-imagemin": "~0.6.1",
+    "gulp-cache": "~0.2.0",
+    "gulp-useref": "~0.5.0",
+    "gulp-size": "~0.4.0",
+    "gulp-jshint": "~1.8.0",
+    "gulp-notify": "~1.2.4",
+    "gulp-util": "~3.0.0",
+    "pretty-hrtime": "~0.2.1",
+    "browserify": "~5.8.0",
+    "watchify": "~0.10.1",
+    "browser-sync": "~0.8.2",
+    "deamdify": "~0.1.1",
+    "main-bower-files": "~1.0.2",
+    "debowerify": "~0.8.1",
+    "uglifyify": "~2.5.0",
+    "jshint-stylish": "~0.4.0",
+    "vinyl-source-stream": "~0.1.1",
+    "streamqueue": "~0.1.2",
+    "wiredep": "~1.8.2"
   }
 }
