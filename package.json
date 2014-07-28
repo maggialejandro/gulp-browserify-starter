@@ -41,6 +41,7 @@
     "jshint-stylish": "~0.4.0",
     "vinyl-source-stream": "~0.1.1",
     "streamqueue": "~0.1.2",
-    "wiredep": "~1.8.2"
+    "wiredep": "~1.8.2",
+    "node-underscorify": "0.0.11"
   }
 }

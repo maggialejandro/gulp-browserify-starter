@@ -16,26 +16,31 @@ var source       = require('vinyl-source-stream');
 
 var bundleLogger = require('../util/bundleLogger');
 var handleErrors = require('../util/handleErrors');
-var config = require('../config');
 
+var config       = require('../config');
 
 gulp.task('browserify', function() {
-  var bundleMethod = global.isWatching ? watchify : browserify;
+    var bundleMethod = global.isWatching ? watchify : browserify;
 
-  var bundler = bundleMethod({
-    // Specify the entry point of your app
-    entries: config.scripts.src,
-    // Add file extentions to make optional in your requires
-    extensions: ['.js']
-  })
-  .transform('deamdify')
-  .transform('debowerify');
+    var tplTransform = require('node-underscorify').transform({
+        extensions: ['ejs', 'html']
+    });
 
-  if (config.env !== 'dev') {
-    bundler = bundler.transform('uglifyify');
-  }
+    var bundler = bundleMethod({
+        // Specify the entry point of your app
+        entries: config.scripts.src,
+        // Add file extentions to make optional in your requires
+        extensions: ['.js']
+    })
+    .transform(tplTransform)
+    .transform('deamdify')
+    .transform('debowerify');
 
-  var bundle = function() {
+    if (config.env !== 'dev') {
+        bundler = bundler.transform('uglifyify');
+    }
+
+    var bundle = function() {
     // Log when bundling starts
     bundleLogger.start();
 
@@ -52,12 +57,12 @@ gulp.task('browserify', function() {
       .pipe(gulp.dest(config.dist + "/" + config.scripts.dest))
       // Log when bundling completes!
       .on('end', bundleLogger.end);
-  };
+    };
 
-  if(global.isWatching) {
+    if(global.isWatching) {
     // Rebundle with watchify on changes.
     bundler.on('update', bundle);
-  }
+    }
 
-  return bundle();
+    return bundle();
 });
